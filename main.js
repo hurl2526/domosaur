@@ -1,6 +1,8 @@
-const messWithMe = document.querySelector('.mess-with-me');
-messWithMe.style.fontSize = '3em';
-messWithMe.style.backgroundColor = 'green';
+const spanMessWithMe = document.querySelector('.mess-with-me');
+spanMessWithMe.style.fontSize = '3em';
+
+const pMessWithMe = document.querySelector('p.mess-with-me');
+pMessWithMe.style.backgroundColor = 'green';
 
 const hide2Image = document.querySelector('#hide-me');
 hide2Image.style.display = 'none';
@@ -9,9 +11,9 @@ const firstImage = document.querySelector("#triceratops");
 firstImage.style.width = '324px';
 
 const makeOrange = function(){
-messWithMe.style.color = 'orange';
+spanMessWithMe.style.color = 'orange';
 };
-messWithMe.addEventListener('click',makeOrange);
+spanMessWithMe.addEventListener('click',makeOrange);
 
 const redBorder = function(){
   firstImage.style.border = 'thin dotted red';
@@ -27,10 +29,23 @@ featherDino.addEventListener('click',halfTranny);
 const button = document.querySelector('#toggle');
 const picRow= document.querySelector('#row');
 const changeBackgroundColor = function(){
+  if(picRow.style.backgroundColor === ''){
   picRow.style.backgroundColor = 'blue';
+  } else if (picRow.style.backgroundColor === 'blue'){
+    picRow.style.backgroundColor = '';
+  }
 };
 
 button.addEventListener('click', changeBackgroundColor);
+
+biggy = document.querySelector('#biggify');
+const hoverGrow = function(){
+  biggy.style.width = '200px';
+};
+
+biggy.addEventListener('mouseover',hoverGrow);
+
+
 
 
 
